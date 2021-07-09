@@ -11,18 +11,18 @@ import { LoadingOutlined } from '@ant-design/icons';
 
 const initialState = {
     title: '',
-    description: 'One of the best products for april',
-    price: '2199',
+    description: '',
+    price: '',
     categories: [],
     category: '',
     subs: [],
     shipping: 'Yes',
-    quantity: '41',
+    quantity: '0',
     images: [],
     colors: ["Black", "Brown", "Silver", "White", "Blue"],
-    brands: ["Apple", "Samsung", "Microsoft", "Lenovo", "Asus"],
-    color: 'White',
-    brand: 'Apple'
+    brands: ['Apple', 'Samsung', 'Oneplus', 'Razer', 'Msi', 'Lenovo', 'Microsoft'],
+    color: '',
+    brand: ''
 }
 
 
@@ -56,15 +56,13 @@ const ProductCreate = () => {
 
     const handleChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value });
-        console.log(e.target.value)
+        // console.log(e.target.value)
     } 
 
     const handleCategoryChange = (e) => {
         e.preventDefault()
         setValues({...values, subs: [], category : e.target.value});
         getCategorySubs(e.target.value).then((res) => {
-            console.log("hola", e.target.value)
-            console.log("subs", res)
             setSubOptions(res.data);
         })
         setShowSub(true);
@@ -79,9 +77,8 @@ const ProductCreate = () => {
                 </div>
 
                 <div className="col-md-10">
+                    <br/>
                     {loading ? <LoadingOutlined className="text-danger h1"/> : <h4>Product Create</h4> }
-                    <hr/>
-                    {/* {JSON.stringify(values.images)} */}
                     <div className="p-3">
                         <FileUpload 
                             values={values} 

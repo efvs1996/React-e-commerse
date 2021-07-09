@@ -9,6 +9,8 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import CategoryCreate from './pages/admin/category/CategoryCreate';
 import CategoryUpdate from './pages/admin/category/CategoryUpdate';
 import ProductCreate from './pages/admin/product/ProductCreate';
+import ProductUpdate from './pages/admin/product/ProductUpdate';
+import AllProducts from './pages/admin/product/AllProducts';
 import SubCreate from './pages/admin/sub/SubCreate';
 import SubUpdate from './pages/admin/sub/SubUpdate';
 import ForgotPassword from './pages/auth/ForgotPassword';
@@ -48,7 +50,7 @@ const App = () => {
                   _id: res.data._id,
                 },
               });
-          })
+          }) 
         .catch(err => console.log(err));   
       }
     })
@@ -75,6 +77,8 @@ const App = () => {
       <AdminRoute exact path="/admin/sub" component={SubCreate}/>
       <AdminRoute exact path="/admin/sub/:slug" component={SubUpdate}/>
       <AdminRoute exact path="/admin/product" component={ProductCreate}/>
+      <AdminRoute exact path="/admin/product/:slug" component={ProductUpdate}/>
+      <AdminRoute exact path="/admin/products" component={AllProducts}/>
     </Switch>
     </>
   );

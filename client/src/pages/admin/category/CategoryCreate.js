@@ -23,14 +23,16 @@ const CategoryCreate = () =>{
         loadCategories();
     }, [])
 
-    const loadCategories = () => getCategories().then(c => setCategories(c.data))
-
+    const loadCategories = () => getCategories().then((c) => {
+        setCategories(c.data)
+    })
+       
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoading(true)
         createCategory({name}, user.token)
-        .then( res=> {
+        .then((res)=> {
             setName('')
             loadCategories();
             setLoading(false)
@@ -46,9 +48,9 @@ const CategoryCreate = () =>{
         if(window.confirm("Delete?")){
             setLoading(true)
             removeCategory(slug, user.token)
-            .then( res => {
+            .then((res)=> {
                 setLoading(false);
-                toast.error(`${slug.data.name} was deleted`)
+                toast.error(`${res.data.deleted.name} was deleted`)
                 loadCategories();
             })
             .catch((err) => {
