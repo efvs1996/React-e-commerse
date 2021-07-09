@@ -2,11 +2,11 @@ import react from 'react';
 import {Select} from 'antd';
 const {Option} = Select;
 
-const ProductCreateForm = ({values, setValues, handleSubmit, handleChange, handleCategoryChange, subOptions, showSub}) => {
+const ProductCreateForm = ({values, setValues, handleSubmit, handleChange, handleCategoryChange}) => {
 
     const {
         title, 
-        description, 
+        description,
         price, 
         categories, 
         category, 
