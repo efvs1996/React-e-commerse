@@ -2,7 +2,7 @@ import react from 'react';
 import {Select} from 'antd';
 const {Option} = Select;
 
-const ProductCreateForm = ({values, setValues, handleSubmit, handleChange, handleCategoryChange}) => {
+const ProductCreateForm = ({values, setValues, handleSubmit, handleChange, handleCategoryChange, subOptions, showSub}) => {
 
     const {
         title, 
@@ -78,6 +78,7 @@ const ProductCreateForm = ({values, setValues, handleSubmit, handleChange, handl
                                         </option>))}
                             </select>
                         </div>
+                        
                         {showSub && (
                             <div>
                                 <label>Sub Categories</label>
