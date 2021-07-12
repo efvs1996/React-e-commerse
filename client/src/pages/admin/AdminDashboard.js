@@ -12,7 +12,7 @@ const AdminDashboard = () =>{
                 
                 <div className="col">
                 <br/>
-                <h4>All Products</h4>
+                <h4>Admin Dashboard</h4>
                 </div>
             </div>
         </div>

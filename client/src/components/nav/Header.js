@@ -42,7 +42,7 @@ const Header = () => {
     return(
         <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
             <Item key="home" icon={<AppstoreOutlined/>}>
-            <Link to="/">Home</Link>
+            <Link to="/" className="text-danger">Inicio</Link>
             </Item>
 
             {!user && (
@@ -63,7 +63,7 @@ const Header = () => {
                     key="SubMenu" 
                     icon={<SettingOutlined />} 
                     title={user.email && user.email.split('@')[0]} 
-                    className="right"
+                    className="right text-primary"
                 > 
                     {user && user.role === 'subscriber' && (
                         <Item key="setting:1">

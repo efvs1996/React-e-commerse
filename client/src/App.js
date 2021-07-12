@@ -22,6 +22,8 @@ import Password from './pages/user/Password';
 import Wishlist from './pages/user/Wishlist';
 
 import Home from './pages/Home';
+import Product from './pages/Product';
+
 import Header from './components/nav/Header';
 
 import { auth } from './firebase';
@@ -79,6 +81,7 @@ const App = () => {
       <AdminRoute exact path="/admin/product" component={ProductCreate}/>
       <AdminRoute exact path="/admin/product/:slug" component={ProductUpdate}/>
       <AdminRoute exact path="/admin/products" component={AllProducts}/>
+      <Route exact path="/product/:slug" component={Product}/>
     </Switch>
     </>
   );

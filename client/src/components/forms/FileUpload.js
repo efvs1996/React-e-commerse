@@ -76,7 +76,7 @@ const FileUpload = ({values, setValues, setLoading}) => {
     <div className="row"  style={{width: 'auto'}}>
         {values.images && values.images.map((image) => {
             return(
-                <span className="avatar-item col-1" key={image.public_id}>
+                <span className="avatar-item" key={image.public_id}>
                     <Badge 
                         count="X"
                         style={{cursor: 'pointer'}}  
@@ -85,7 +85,7 @@ const FileUpload = ({values, setValues, setLoading}) => {
 
                         <Avatar 
                         src={image.url} 
-                        size={100} 
+                        size={150} 
                         shape="square"
                         className="ml-3 mb-2"
                         />
